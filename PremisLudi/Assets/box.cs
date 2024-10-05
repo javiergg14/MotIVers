@@ -2,38 +2,27 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class box : MonoBehaviour
+public class Box : MonoBehaviour
 {
-    private Vector3 targetPosition;   // Almacena la posición objetivo
-    private bool isMoving = false;    // Controla si el objeto se está moviendo
-    public float speed = 5f;          // Velocidad de movimiento del objeto
+    public float speed = 5f; // Velocidad de movimiento
+    public Animator animator; // Referencia al componente Animator
 
-    // Update is called once per frame
     void Update()
     {
-        // Detectar clic izquierdo en cualquier parte de la pantalla
-        if (Input.GetMouseButtonDown(0))
-        {
-            // Convertir la posición del ratón a coordenadas del mundo
-            Vector3 mousePos = Input.mousePosition;
-            mousePos = Camera.main.ScreenToWorldPoint(mousePos);
-            targetPosition = new Vector3(mousePos.x, mousePos.y, transform.position.z);  // Establecer la posición objetivo
+        // Obtener el input de los ejes horizontal y vertical
+        float speedX = Input.GetAxis("Horizontal") * Time.deltaTime * speed;
+        float speedY = Input.GetAxis("Vertical") * Time.deltaTime * speed;
 
-            isMoving = true;  // Activar el movimiento hacia la posición del clic
-        }
+        // Configurar el parámetro de animación "movement" según el valor de la velocidad horizontal
+        animator.SetFloat("movementX", speedX * speed);
+        animator.SetFloat("movementY", speedY * speed);
 
-        // Si el objeto está en movimiento, interpola hacia la posición objetivo
-        if (isMoving)
-        {
-            // Mueve el objeto hacia la posición objetivo usando Lerp para interpolación suave
-            transform.position = Vector3.Lerp(transform.position, targetPosition, speed * Time.deltaTime);
+        // Obtener la posición actual
+        Vector3 posicion = transform.position;
 
-            // Si el objeto está lo suficientemente cerca del objetivo, detenemos el movimiento
-            if (Vector3.Distance(transform.position, targetPosition) < 0.1f)
-            {
-                isMoving = false;  // Detener el movimiento una vez llega al objetivo
-            }
-        }
+        // Actualizar la posición en los ejes X y Y (movimiento horizontal y vertical)
+        transform.position = new Vector3(speedX + posicion.x, speedY + posicion.y, posicion.z);
     }
 }
+
 
