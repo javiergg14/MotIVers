@@ -22,11 +22,6 @@ public class TreeOrderLayer : MonoBehaviour
         float treeBottomY = treeSpriteRenderer.bounds.min.y;
 
         GameObject player = GameObject.FindWithTag("Player");
-        if (player == null)
-        {
-            Debug.LogError("No se encontró al jugador.");
-            return; // Salir si no se encuentra el jugador
-        }
 
         float playerY = player.transform.position.y;
 
@@ -34,11 +29,11 @@ public class TreeOrderLayer : MonoBehaviour
 
         if (playerY > treeBottomY + offsetY)
         {
-            treeSpriteRenderer.sortingOrder = 1;
+            treeSpriteRenderer.sortingOrder = 5;
         }
         else
         {
-            treeSpriteRenderer.sortingOrder = -1;
+            treeSpriteRenderer.sortingOrder = -5;
         }
     }
 
