@@ -31,7 +31,7 @@ public class GameTransition : MonoBehaviour
             SceneManager.LoadScene("Game");
         }
 
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.K))
         {
             // Alternar entre los paneles al presionar Escape
             if (panelToShow != null && panelToHide != null)
