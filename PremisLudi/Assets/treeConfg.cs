@@ -19,21 +19,27 @@ public class TreeOrderLayer : MonoBehaviour
 
     void UpdateTreeOrder()
     {
-        
         float treeBottomY = treeSpriteRenderer.bounds.min.y;
 
-        
-        GameObject player = GameObject.FindWithTag("Player"); 
+        GameObject player = GameObject.FindWithTag("Player");
+        if (player == null)
+        {
+            Debug.LogError("No se encontró al jugador.");
+            return; // Salir si no se encuentra el jugador
+        }
+
         float playerY = player.transform.position.y;
 
-       
+        Debug.Log($"Posición del jugador: {playerY}, Parte inferior del árbol: {treeBottomY}");
+
         if (playerY > treeBottomY + offsetY)
         {
-            treeSpriteRenderer.sortingOrder = 1; 
+            treeSpriteRenderer.sortingOrder = 1;
         }
         else
         {
-            treeSpriteRenderer.sortingOrder = -1; 
+            treeSpriteRenderer.sortingOrder = -1;
         }
     }
+
 }
