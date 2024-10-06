@@ -30,7 +30,7 @@ public class TreeOrderLayer : MonoBehaviour
 
         float playerY = player.transform.position.y;
 
-        Debug.Log($"Posición del jugador: {playerY}, Parte inferior del árbol: {treeBottomY}");
+        //Debug.Log($"Posición del jugador: {playerY}, Parte inferior del árbol: {treeBottomY}");
 
         if (playerY > treeBottomY + offsetY)
         {

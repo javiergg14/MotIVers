@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BoxController : MonoBehaviour // Cambia el nombre de la clase
+public class PlayerController : MonoBehaviour // Cambia el nombre de la clase
 {
     public float speed = 5f;
     public Animator animator;
