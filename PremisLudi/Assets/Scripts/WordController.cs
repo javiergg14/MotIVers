@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Word : MonoBehaviour
+public class WordController : MonoBehaviour
 {
     [SerializeField]
     private GameObject player;
