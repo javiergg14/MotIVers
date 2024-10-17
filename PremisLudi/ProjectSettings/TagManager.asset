@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Word
+  - Agressive
   layers:
   - Default
   - TransparentFX
