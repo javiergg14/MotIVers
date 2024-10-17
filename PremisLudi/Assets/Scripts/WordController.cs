@@ -8,8 +8,10 @@ public class WordController : MonoBehaviour
     private GameObject player;
 
     private bool isPlayerInRange = false;
-    private Vector2 gap = new Vector2(0, 0.5f);
+    private Vector2 gap = new(0, 0.5f);
     private bool isHeld = false;
+
+    private ExchangeWord exchangeWord;
 
     private void Update()
     {
@@ -23,8 +25,16 @@ public class WordController : MonoBehaviour
     {
         if (isHeld)
         {
-            transform.position = new Vector2(player.transform.position.x, player.transform.position.y);
-            transform.SetParent(null);
+
+            if (exchangeWord != null)
+            {
+                transform.position = exchangeWord.transform.position;
+                transform.SetParent(exchangeWord.transform);
+            } else
+            {
+                transform.position = new Vector2(player.transform.position.x, player.transform.position.y);
+                transform.SetParent(null);
+            }
             isHeld = false;
 
             GetComponent<WordLevitation>().SetHeld(false);
@@ -53,5 +63,10 @@ public class WordController : MonoBehaviour
         {
             isPlayerInRange = false;
         }
+    }
+
+    public void SetExchangeWord(ExchangeWord exchangeWord)
+    {
+        this.exchangeWord = exchangeWord;
     }
 }
