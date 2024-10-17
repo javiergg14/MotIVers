@@ -26,12 +26,16 @@ public class WordController : MonoBehaviour
             transform.position = new Vector2(player.transform.position.x, player.transform.position.y);
             transform.SetParent(null);
             isHeld = false;
+
+            GetComponent<WordLevitation>().SetHeld(false);
         }
         else
         {
             transform.position = (Vector2)player.transform.position + gap;
             transform.SetParent(player.transform);
             isHeld = true;
+
+            GetComponent<WordLevitation>().SetHeld(true);
         }
     }
 
