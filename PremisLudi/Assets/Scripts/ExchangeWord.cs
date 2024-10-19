@@ -25,25 +25,6 @@ public class ExchangeWord : MonoBehaviour
         }
     }
 
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-        Debug.Log("entra");
-        if (currentWord != null)
-        {
-            switch (currentWord.tag)
-            {
-                case "Agressive":
-                    //Debug.Log("Tag: Agressive");
-                    break;
-
-                default:
-                    Debug.Log("Palabra no reconocida.");
-                    break;
-            }
-
-        }
-    }
-
     public WordController GetCurrentWord()
     {
         return currentWord;
@@ -51,6 +32,7 @@ public class ExchangeWord : MonoBehaviour
 
     public void SetCurrentWord(WordController currentWord)
     {
+        piece.ChangeSprite(currentWord.tag);
         this.currentWord = currentWord;
     }
 }

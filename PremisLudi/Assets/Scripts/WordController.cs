@@ -44,10 +44,6 @@ public class WordController : MonoBehaviour
         {
             transform.position = (Vector2)player.transform.position + gap;
             transform.SetParent(player.transform);
-            if (exchangeWord != null)
-            {
-                exchangeWord.SetCurrentWord(null);
-            }
             isHeld = true;
 
             GetComponent<WordLevitation>().SetHeld(true);

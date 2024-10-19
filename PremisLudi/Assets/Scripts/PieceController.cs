@@ -5,23 +5,48 @@ using UnityEngine;
 
 public class PieceController : MonoBehaviour
 {
+    public Sprite[] sprites;
 
-    void Update()
+    private SpriteRenderer spriteRenderer;
+    private Animator animator;
+    private enum SpriteNames
     {
-        /*if (exchangeWord.GetCurrentWord() != null)
+        AGRESSIVE,
+        LITTLE,
+        TRAINED,
+        BIG,
+        SUPERHERO
+    }
+
+    void Start()
+    {
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        animator = GetComponent<Animator>();
+    }
+
+    public void ChangeSprite(String wordTag)
+    {
+        switch (wordTag)
         {
-            switch (exchangeWord.GetCurrentWord().tag)
-            {
-                case "Agressive":
-                    Debug.Log("Tag: Agressive");
-                    break;
+            case "Agressive":
+                spriteRenderer.sprite = sprites[(int)SpriteNames.AGRESSIVE];
+                break;
 
-                default:
-                    Debug.Log("Palabra no reconocida.");
-                    break;
-            }
-        }*/
+            case "Little":
+                spriteRenderer.sprite = sprites[(int)SpriteNames.LITTLE];
+                break;
 
+            case "Trained":
+                spriteRenderer.sprite = sprites[(int)SpriteNames.TRAINED];
+                break;
 
+            case "Big":
+                spriteRenderer.sprite = sprites[(int)SpriteNames.BIG];
+                break;
+
+            case "Superhero":
+                spriteRenderer.sprite = sprites[(int)SpriteNames.SUPERHERO];
+                break;
+        }
     }
 }
