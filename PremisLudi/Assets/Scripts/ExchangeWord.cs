@@ -4,14 +4,16 @@ using UnityEngine;
 
 public class ExchangeWord : MonoBehaviour
 {
-    private WordController currentWord;
+    public WordController currentWord;
+
+    [SerializeField]
+    private PieceController piece;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.GetComponent<WordController>())
         {
             other.GetComponent<WordController>().SetExchangeWord(this);
-            currentWord = other.GetComponent<WordController>();
         }
 
     }
@@ -20,12 +22,35 @@ public class ExchangeWord : MonoBehaviour
         if (other.GetComponent<WordController>())
         {
             other.GetComponent<WordController>().SetExchangeWord(null);
-            currentWord = null;
+        }
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        Debug.Log("entra");
+        if (currentWord != null)
+        {
+            switch (currentWord.tag)
+            {
+                case "Agressive":
+                    //Debug.Log("Tag: Agressive");
+                    break;
+
+                default:
+                    Debug.Log("Palabra no reconocida.");
+                    break;
+            }
+
         }
     }
 
     public WordController GetCurrentWord()
     {
         return currentWord;
+    }
+
+    public void SetCurrentWord(WordController currentWord)
+    {
+        this.currentWord = currentWord;
     }
 }
