@@ -1,27 +1,27 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PieceController : MonoBehaviour
 {
-    [SerializeField]
-    private readonly ExchangeWord exchangeWord;
 
     void Update()
     {
-        if (exchangeWord == null)
+        /*if (exchangeWord.GetCurrentWord() != null)
         {
+            switch (exchangeWord.GetCurrentWord().tag)
+            {
+                case "Agressive":
+                    Debug.Log("Tag: Agressive");
+                    break;
 
-        }
-        switch (exchangeWord.GetCurrentWord().tag)
-        {
-            case "Agressive":
-                Debug.Log("Este es un mensaje de información.");
-                break;
+                default:
+                    Debug.Log("Palabra no reconocida.");
+                    break;
+            }
+        }*/
 
-            default:
-                Debug.Log("Palabra no reconocida.");
-                break;
-        }
+
     }
 }
