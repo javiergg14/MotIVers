@@ -28,7 +28,7 @@ public class GameTransition : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.J))
         {
-            SceneManager.LoadScene("Game");
+            SceneManager.LoadScene("Tutorial");
         }
 
         if (Input.GetKeyDown(KeyCode.K))

@@ -10,12 +10,12 @@ public class Box : MonoBehaviour
     private float verticalMove = 0;
 
     public Animator animator;
-    private Rigidbody2D rigidbody2D;
+    private Rigidbody2D myRigidbody2D;
     public Joystick joystick;
 
     private void Start()
     {
-        rigidbody2D = GetComponent<Rigidbody2D>();
+        myRigidbody2D = GetComponent<Rigidbody2D>();
     }
 
     void Update()
@@ -37,8 +37,8 @@ public class Box : MonoBehaviour
     private void MoveCharacter(Vector2 movement)
     {
         // Aplicar movimiento
-        Vector2 newPosition = rigidbody2D.position + movement * speed * Time.fixedDeltaTime;
-        rigidbody2D.MovePosition(newPosition);
+        Vector2 newPosition = myRigidbody2D.position + movement * speed * Time.fixedDeltaTime;
+        myRigidbody2D.MovePosition(newPosition);
     }
 
     private void UpdateAnimation(Vector2 movement)
