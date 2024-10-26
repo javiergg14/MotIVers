@@ -169,7 +169,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Cec_enfadat_0: -4214958449372904889
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

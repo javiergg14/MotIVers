@@ -19,6 +19,20 @@ public class WordController : MonoBehaviour
         {
             InteractWithWord();
         }
+        if (Input.touchCount > 0)
+        {
+            Touch touch = Input.GetTouch(0); // Obtiene el primer toque
+
+            // Verifica si el toque comenzó
+            if (touch.phase == TouchPhase.Began)
+            {
+                // Comprueba si el jugador está en rango o si está sosteniendo el objeto
+                if (isPlayerInRange || isHeld)
+                {
+                    InteractWithWord();
+                }
+            }
+        }
     }
 
     private void InteractWithWord()
