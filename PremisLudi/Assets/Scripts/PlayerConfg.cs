@@ -24,15 +24,6 @@ public class Box : MonoBehaviour
         verticalMove = joystick.Vertical;
         horizontalMove = joystick.Horizontal;
 
-        // Añadir entrada del teclado WASD
-        if (Input.GetKey(KeyCode.W)) verticalMove = 1;
-        else if (Input.GetKey(KeyCode.S)) verticalMove = -1;
-        else verticalMove = 0;
-
-        if (Input.GetKey(KeyCode.A)) horizontalMove = -1;
-        else if (Input.GetKey(KeyCode.D)) horizontalMove = 1;
-        else horizontalMove = 0;
-
         // Crear un vector de movimiento normalizado
         Vector2 movement = new Vector2(horizontalMove, verticalMove).normalized;
 
