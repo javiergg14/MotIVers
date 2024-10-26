@@ -13,6 +13,8 @@ public class WordController : MonoBehaviour
 
     private ExchangeWord exchangeWord;
 
+    public RectTransform joystickArea;
+
     private void Update()
     {
         if (isPlayerInRange && Input.GetKeyDown(KeyCode.Space) || isHeld && Input.GetKeyDown(KeyCode.Space))
@@ -23,9 +25,15 @@ public class WordController : MonoBehaviour
         {
             Touch touch = Input.GetTouch(0); // Obtiene el primer toque
 
-            // Verifica si el toque comenzó
             if (touch.phase == TouchPhase.Began)
             {
+                // Verifica si el toque está dentro del área del joystick
+                if (IsTouchInsideJoystick(touch.position))
+                {
+                    // No hacer nada si el toque es dentro del joystick
+                    return;
+                }
+
                 // Comprueba si el jugador está en rango o si está sosteniendo el objeto
                 if (isPlayerInRange || isHeld)
                 {
@@ -33,6 +41,11 @@ public class WordController : MonoBehaviour
                 }
             }
         }
+    }
+    bool IsTouchInsideJoystick(Vector2 touchPosition)
+    {
+        // Verifica si la posición del toque está dentro del área del joystick
+        return RectTransformUtility.RectangleContainsScreenPoint(joystickArea, touchPosition);
     }
 
     private void InteractWithWord()
