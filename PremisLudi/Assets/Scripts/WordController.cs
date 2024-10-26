@@ -21,27 +21,27 @@ public class WordController : MonoBehaviour
         {
             InteractWithWord();
         }
+
         if (Input.touchCount > 0)
         {
             Touch touch = Input.GetTouch(0); // Obtiene el primer toque
 
-            if (touch.phase == TouchPhase.Began)
+            // Solo procesa el toque si está en fase de finalización
+            if (touch.phase == TouchPhase.Ended)
             {
                 // Verifica si el toque está dentro del área del joystick
-                if (IsTouchInsideJoystick(touch.position))
+                if (!IsTouchInsideJoystick(touch.position))
                 {
-                    // No hacer nada si el toque es dentro del joystick
-                    return;
-                }
-
-                // Comprueba si el jugador está en rango o si está sosteniendo el objeto
-                if (isPlayerInRange || isHeld)
-                {
-                    InteractWithWord();
+                    // Comprueba si el jugador está en rango o si está sosteniendo el objeto
+                    if (isPlayerInRange || isHeld)
+                    {
+                        InteractWithWord();
+                    }
                 }
             }
         }
     }
+
     bool IsTouchInsideJoystick(Vector2 touchPosition)
     {
         // Verifica si la posición del toque está dentro del área del joystick
@@ -52,13 +52,13 @@ public class WordController : MonoBehaviour
     {
         if (isHeld)
         {
-
             if (exchangeWord != null)
             {
                 transform.position = exchangeWord.transform.position;
                 transform.SetParent(exchangeWord.transform);
                 exchangeWord.SetCurrentWord(this);
-            } else
+            }
+            else
             {
                 transform.position = new Vector2(player.transform.position.x, player.transform.position.y);
                 transform.SetParent(null);
