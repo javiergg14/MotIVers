@@ -1,20 +1,23 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class ChangeSceneOnTrigger : MonoBehaviour
+public class CargaEscena : MonoBehaviour
 {
-    public GameObject player; // Arrastra aquí el objeto del jugador en el inspector
-    public string nombreDeLaEscena;
+    public string nombreEscena;
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        // Comprueba si el objeto que colisiona es el jugador
-        if (other.gameObject == player)
+        if (collision.CompareTag("Player"))
         {
-            Debug.Log("Colisión detectada con el jugador.");
-            SceneManager.LoadScene(nombreDeLaEscena);
+            SceneManager.LoadScene(nombreEscena);
         }
     }
+
 }
+
+
+
 
 
