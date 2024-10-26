@@ -21,8 +21,15 @@ public class Box : MonoBehaviour
     void Update()
     {
         // Obtener la entrada del joystick
-        verticalMove = joystick.Vertical;
-        horizontalMove = joystick.Horizontal;
+        float joystickVertical = joystick.Vertical;
+        float joystickHorizontal = joystick.Horizontal;
+
+        // Manejar la entrada de teclado (WASD)
+        HandleKeyboardInput();
+
+        // Combinar la entrada del joystick y del teclado
+        horizontalMove = joystickHorizontal + (Input.GetKey(KeyCode.D) ? 1f : 0) + (Input.GetKey(KeyCode.A) ? -1f : 0);
+        verticalMove = joystickVertical + (Input.GetKey(KeyCode.W) ? 1f : 0) + (Input.GetKey(KeyCode.S) ? -1f : 0);
 
         // Crear un vector de movimiento normalizado
         Vector2 movement = new Vector2(horizontalMove, verticalMove).normalized;
@@ -32,6 +39,11 @@ public class Box : MonoBehaviour
 
         // Actualizar la animación
         UpdateAnimation(movement);
+    }
+
+    private void HandleKeyboardInput()
+    {
+        // Este método ahora se puede quitar, ya que se maneja la entrada de teclado en Update.
     }
 
     private void MoveCharacter(Vector2 movement)

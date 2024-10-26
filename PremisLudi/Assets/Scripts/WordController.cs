@@ -17,32 +17,27 @@ public class WordController : MonoBehaviour
 
     private void Update()
     {
-        if (isPlayerInRange && Input.GetKeyDown(KeyCode.Space) || isHeld && Input.GetKeyDown(KeyCode.Space))
-        {
-            InteractWithWord();
-        }
         if (Input.touchCount > 0)
         {
             Touch touch = Input.GetTouch(0); // Obtiene el primer toque
 
-            if (touch.phase == TouchPhase.Began)
-            {
-                // Verifica si el toque está dentro del área del joystick
-                if (IsTouchInsideJoystick(touch.position))
-                {
-                    // No hacer nada si el toque es dentro del joystick
-                    return;
-                }
+            // Verifica si el toque está dentro del área del joystick
+            bool isTouchInsideJoystick = IsTouchInsideJoystick(touch.position);
 
-                // Comprueba si el jugador está en rango o si está sosteniendo el objeto
-                if (isPlayerInRange || isHeld)
-                {
-                    InteractWithWord();
-                }
+            if (touch.phase == TouchPhase.Began && (isPlayerInRange || isHeld) && !isTouchInsideJoystick)
+            {
+                InteractWithWord();
             }
         }
+
+        // Para el input del teclado, permite interactuar incluso si el joystick está tocado
+        if ((isPlayerInRange || isHeld) && Input.GetKeyDown(KeyCode.Space))
+        {
+            InteractWithWord();
+        }
     }
-     bool IsTouchInsideJoystick(Vector2 touchPosition)
+
+    bool IsTouchInsideJoystick(Vector2 touchPosition)
     {
         // Verifica si la posición del toque está dentro del área del joystick
         return RectTransformUtility.RectangleContainsScreenPoint(joystickArea, touchPosition);
@@ -52,13 +47,13 @@ public class WordController : MonoBehaviour
     {
         if (isHeld)
         {
-
             if (exchangeWord != null)
             {
                 transform.position = exchangeWord.transform.position;
                 transform.SetParent(exchangeWord.transform);
                 exchangeWord.SetCurrentWord(this);
-            } else
+            }
+            else
             {
                 transform.position = new Vector2(player.transform.position.x, player.transform.position.y);
                 transform.SetParent(null);
