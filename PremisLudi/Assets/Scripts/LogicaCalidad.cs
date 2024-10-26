@@ -15,7 +15,6 @@ public class LogicaCalidad : MonoBehaviour
     {
 
         calidad = PlayerPrefs.GetInt("numeroDeCalidad", 3);
-        dropdown.value = calidad;
         AjustarCalidad();
     }
 
