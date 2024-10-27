@@ -14,8 +14,9 @@ public class PieceController : MonoBehaviour
         AGRESSIVE,
         LITTLE,
         TRAINED,
-        BIG,
-        SUPERHERO
+        SUPERHERO,
+        BIG
+       
     }
 
     void Start()
