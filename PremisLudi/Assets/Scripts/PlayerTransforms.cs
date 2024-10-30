@@ -12,6 +12,9 @@ public class PlayerTransforms : MonoBehaviour
 
     private SpriteRenderer spriteRenderer;
 
+    [SerializeField]
+    private GameObject font;
+
     public enum SpriteNames
     {
         FROG,
@@ -34,10 +37,13 @@ public class PlayerTransforms : MonoBehaviour
         {
             this.GetComponent<Animator>().enabled = false;
             spriteRenderer.sprite = sprites[(int)SpriteNames.FROG];
+            font.GetComponent<Collider2D>().enabled = false;
+
         }
         else if (type == 1) {
             this.GetComponent<Animator>().enabled = true;
             spriteRenderer.sprite = sprites[(int)SpriteNames.HUMAN];
+            font.GetComponent<Collider2D>().enabled = true;
         }
         
     }

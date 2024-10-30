@@ -38,7 +38,6 @@ public class ExchangeWord : MonoBehaviour
 
     public void SetDefault()
     {
-        Debug.Log("Entra");
         piece.ChangeSprite("Default");
         this.currentWord = null;
     }

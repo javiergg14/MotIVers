@@ -13,6 +13,22 @@ public class PieceController : MonoBehaviour
     [SerializeField]
     private PlayerTransforms playerTransforms;
 
+    [SerializeField]
+    private GameObject lvl;
+
+    [SerializeField]
+    private GameObject entradaDuende;
+
+    [SerializeField]
+    private OvejaTransform sheep;
+
+    public static class SharedData
+    {
+        public static bool duendeTrained = false; 
+    }
+
+
+
     private enum SpriteNames
     {
         AGRESSIVE,
@@ -31,55 +47,73 @@ public class PieceController : MonoBehaviour
 
     public void ChangeSprite(String wordTag)
     {
-        switch (wordTag)
+        Debug.Log(SharedData.duendeTrained);
+        if (this.tag != "Cec" || this.tag == "Cec" && SharedData.duendeTrained)
         {
-            case "Agressive":
-                spriteRenderer.sprite = sprites[(int)SpriteNames.AGRESSIVE];
-                if(this.tag == "Duende")
-                {
-                    playerTransforms.Transform(0);
-                }
+            switch (wordTag)
+            {
+                case "Agressive":
+                    spriteRenderer.sprite = sprites[(int)SpriteNames.AGRESSIVE];
+                    if (this.tag == "Duende")
+                    {
+                        playerTransforms.Transform(0);
+                    }
+                    if (this.tag == "Gos")
+                    {
+                        entradaDuende.GetComponent<Collider2D>().enabled = false;
+                        sheep.TransformSheep();
+                    }
+                    break;
 
-                break;
+                case "Little":
+                    spriteRenderer.sprite = sprites[(int)SpriteNames.LITTLE];
+                    if (this.tag == "Duende")
+                    {
+                        playerTransforms.Transform(1);
+                    }
+                    break;
 
-            case "Little":
-                spriteRenderer.sprite = sprites[(int)SpriteNames.LITTLE];
-                if (this.tag == "Duende")
-                {
-                    playerTransforms.Transform(1);
-                }
-                break;
+                case "Trained":
+                    spriteRenderer.sprite = sprites[(int)SpriteNames.TRAINED];
+                    if (this.tag == "Duende")
+                    {
+                        SharedData.duendeTrained = true;
+                        playerTransforms.Transform(1);
+                    }
+                    break;
 
-            case "Trained":
-                spriteRenderer.sprite = sprites[(int)SpriteNames.TRAINED];
-                if (this.tag == "Duende")
-                {
-                    playerTransforms.Transform(1);
-                }
-                break;
+                case "Big":
 
-            case "Big":
-                spriteRenderer.sprite = sprites[(int)SpriteNames.BIG];
-                if (this.tag == "Duende")
-                {
-                    playerTransforms.Transform(1);
-                }
-                break;
+                    spriteRenderer.sprite = sprites[(int)SpriteNames.BIG];
+                    if (this.tag == "Duende")
+                    {
+                        playerTransforms.Transform(1);
+                    }
+                    break;
 
-            case "Superhero":
-                spriteRenderer.sprite = sprites[(int)SpriteNames.SUPERHERO];
-                if (this.tag == "Duende")
-                {
-                    playerTransforms.Transform(1);
-                }
-                break;
-            case "Default":
-                spriteRenderer.sprite = sprites[(int)SpriteNames.DEFAULT];
-                if (this.tag == "Duende")
-                {
-                    playerTransforms.Transform(1);
-                }
-                break;
+                case "Superhero":
+
+                    Debug.Log("Entra");
+                    spriteRenderer.sprite = sprites[(int)SpriteNames.SUPERHERO];
+                    if (this.tag == "Duende")
+                    {
+                        playerTransforms.Transform(1);
+                    }
+                    if (this.tag == "Cec")
+                    {
+                        lvl.GetComponent<Collider2D>().enabled = false;
+                    }
+                    break;
+
+                case "Default":
+                    spriteRenderer.sprite = sprites[(int)SpriteNames.DEFAULT];
+                    if (this.tag == "Duende")
+                    {
+                        playerTransforms.Transform(1);
+                        SharedData.duendeTrained = false;
+                    }
+                    break;
+            }
         }
     }
 }
