@@ -12,7 +12,6 @@ public class QuitGame : MonoBehaviour
 
     public void Quit()
     {
-        // Si estamos en el editor de Unity
         #if UNITY_EDITOR
             UnityEditor.EditorApplication.isPlaying = false;
         #else

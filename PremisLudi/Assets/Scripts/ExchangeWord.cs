@@ -35,4 +35,11 @@ public class ExchangeWord : MonoBehaviour
         piece.ChangeSprite(currentWord.tag);
         this.currentWord = currentWord;
     }
+
+    public void SetDefault()
+    {
+        Debug.Log("Entra");
+        piece.ChangeSprite("Default");
+        this.currentWord = null;
+    }
 }

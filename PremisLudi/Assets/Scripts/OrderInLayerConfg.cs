@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class TreeOrderLayer : MonoBehaviour
 {
-    private SpriteRenderer treeSpriteRenderer; 
-    public float offsetY = 0.5f; 
+    private SpriteRenderer treeSpriteRenderer;
+    public float offsetY = 0.5f;
+    public float detectionRange = 5f; // Rango en el que el árbol reacciona al jugador
 
     void Start()
     {
@@ -19,22 +20,26 @@ public class TreeOrderLayer : MonoBehaviour
 
     void UpdateTreeOrder()
     {
-        float treeBottomY = treeSpriteRenderer.bounds.min.y;
-
         GameObject player = GameObject.FindWithTag("Player");
+        if (player == null) return; // Asegúrate de que el jugador existe
 
         float playerY = player.transform.position.y;
+        float treeBottomY = treeSpriteRenderer.bounds.min.y;
 
-        //Debug.Log($"Posición del jugador: {playerY}, Parte inferior del árbol: {treeBottomY}");
+        // Calcula la distancia entre el jugador y el árbol
+        float distanceToPlayer = Vector2.Distance(player.transform.position, transform.position);
 
-        if (playerY > treeBottomY + offsetY)
+        // Solo actualiza el orden de capa si el jugador está dentro del rango
+        if (distanceToPlayer <= detectionRange)
         {
-            treeSpriteRenderer.sortingOrder = 5;
-        }
-        else
-        {
-            treeSpriteRenderer.sortingOrder = -5;
+            if (playerY > treeBottomY + offsetY)
+            {
+                treeSpriteRenderer.sortingOrder = 5;
+            }
+            else
+            {
+                treeSpriteRenderer.sortingOrder = -5;
+            }
         }
     }
-
 }

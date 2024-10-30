@@ -57,6 +57,7 @@ public class WordController : MonoBehaviour
             {
                 transform.position = new Vector2(player.transform.position.x, player.transform.position.y);
                 transform.SetParent(null);
+
             }
             isHeld = false;
 
@@ -69,6 +70,10 @@ public class WordController : MonoBehaviour
             isHeld = true;
 
             GetComponent<WordLevitation>().SetHeld(true);
+            if (exchangeWord != null)
+            {
+                exchangeWord.SetDefault();
+            }
         }
     }
 

@@ -16,8 +16,6 @@ public class Volumen : MonoBehaviour
 
         slider.value = PlayerPrefs.GetFloat("volumenAudio", 0.5f);
         AudioListener.volume = sliderValue;
-        RevisarSiEstoyMute();
-
     }
 
     // Update is called once per frame
@@ -26,18 +24,5 @@ public class Volumen : MonoBehaviour
         sliderValue = valor;
         PlayerPrefs.SetFloat("volumenAudio", sliderValue);
         AudioListener.volume = slider.value;
-        RevisarSiEstoyMute();
-    }
-
-    public void RevisarSiEstoyMute()
-    {
-        if (sliderValue == 0)
-        {
-            imagenMute.enabled = true;
-        }
-        else
-        {
-            imagenMute.enabled = false;
-        }
     }
 }
