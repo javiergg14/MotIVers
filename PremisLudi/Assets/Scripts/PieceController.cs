@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PieceController : MonoBehaviour
@@ -25,13 +26,14 @@ public class PieceController : MonoBehaviour
     [SerializeField]
     private ExchangeWord exchangeWordCec;
 
+    [SerializeField]
+    private WordController word;
 
 
     public static class SharedData
     {
         public static bool duendeTrained = false;
     }
-
 
 
     private enum SpriteNames
@@ -48,6 +50,12 @@ public class PieceController : MonoBehaviour
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
+
+        if (word != null)
+        {
+            ChangeSprite(word.tag);
+        }
+        
     }
 
     void Update()
@@ -65,7 +73,6 @@ public class PieceController : MonoBehaviour
             switch (wordTag)
             {
                 case "Agressive":
-                    Debug.Log("Agressive");
                     spriteRenderer.sprite = sprites[(int)SpriteNames.AGRESSIVE];
                     if (this.tag == "Duende")
                     {
@@ -118,7 +125,6 @@ public class PieceController : MonoBehaviour
                     break;
 
                 case "Default":
-                    Debug.Log("Deafult");
                     spriteRenderer.sprite = sprites[(int)SpriteNames.DEFAULT];
                     if (this.tag == "Duende")
                     {
@@ -129,10 +135,10 @@ public class PieceController : MonoBehaviour
                     break;
             }
         }
-        else if (this.tag == "Cec" && !SharedData.duendeTrained)    
+        else if (this.tag == "Cec" && !SharedData.duendeTrained)
         {
             spriteRenderer.sprite = sprites[(int)SpriteNames.DEFAULT];
         }
-        
+
     }
 }

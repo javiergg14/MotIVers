@@ -11,9 +11,20 @@ public class WordController : MonoBehaviour
     private Vector2 gap = new(0, 0.5f);
     private bool isHeld = false;
 
+    [SerializeField]
     private ExchangeWord exchangeWord;
 
     public RectTransform joystickArea;
+
+    private void Start()
+    {
+        if (exchangeWord != null)
+        {
+            transform.position = exchangeWord.transform.position;
+            transform.SetParent(exchangeWord.transform);
+            exchangeWord.SetCurrentWord(this);
+        }
+    }
 
     private void Update()
     {

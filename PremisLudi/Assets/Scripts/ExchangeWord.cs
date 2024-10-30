@@ -9,6 +9,14 @@ public class ExchangeWord : MonoBehaviour
     [SerializeField]
     public PieceController piece;
 
+    private void Start()
+    {
+        if (currentWord != null)
+        {
+            currentWord.SetExchangeWord(this);
+        }
+    }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.GetComponent<WordController>())
