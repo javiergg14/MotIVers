@@ -11,6 +11,8 @@ TagManager:
   - Cec
   - Superhero
   - Gos
+  - Trained
+  - Big
   layers:
   - Default
   - TransparentFX

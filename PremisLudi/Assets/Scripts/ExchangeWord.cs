@@ -7,7 +7,7 @@ public class ExchangeWord : MonoBehaviour
     public WordController currentWord;
 
     [SerializeField]
-    private PieceController piece;
+    public PieceController piece;
 
     private void OnTriggerEnter2D(Collider2D other)
     {

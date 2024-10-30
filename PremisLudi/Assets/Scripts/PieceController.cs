@@ -22,9 +22,14 @@ public class PieceController : MonoBehaviour
     [SerializeField]
     private OvejaTransform sheep;
 
+    [SerializeField]
+    private ExchangeWord exchangeWordCec;
+
+
+
     public static class SharedData
     {
-        public static bool duendeTrained = false; 
+        public static bool duendeTrained = false;
     }
 
 
@@ -45,14 +50,22 @@ public class PieceController : MonoBehaviour
         animator = GetComponent<Animator>();
     }
 
+    void Update()
+    {
+        if (this.tag == "Cec" && SharedData.duendeTrained && exchangeWordCec.currentWord != null)
+        {
+            exchangeWordCec.piece.ChangeSprite(exchangeWordCec.currentWord.tag);
+        }
+    }
+
     public void ChangeSprite(String wordTag)
     {
-        Debug.Log(SharedData.duendeTrained);
         if (this.tag != "Cec" || this.tag == "Cec" && SharedData.duendeTrained)
         {
             switch (wordTag)
             {
                 case "Agressive":
+                    Debug.Log("Agressive");
                     spriteRenderer.sprite = sprites[(int)SpriteNames.AGRESSIVE];
                     if (this.tag == "Duende")
                     {
@@ -92,8 +105,6 @@ public class PieceController : MonoBehaviour
                     break;
 
                 case "Superhero":
-
-                    Debug.Log("Entra");
                     spriteRenderer.sprite = sprites[(int)SpriteNames.SUPERHERO];
                     if (this.tag == "Duende")
                     {
@@ -101,19 +112,27 @@ public class PieceController : MonoBehaviour
                     }
                     if (this.tag == "Cec")
                     {
+                        Debug.Log("Superhero");
                         lvl.GetComponent<Collider2D>().enabled = false;
                     }
                     break;
 
                 case "Default":
+                    Debug.Log("Deafult");
                     spriteRenderer.sprite = sprites[(int)SpriteNames.DEFAULT];
                     if (this.tag == "Duende")
                     {
                         playerTransforms.Transform(1);
                         SharedData.duendeTrained = false;
+                        exchangeWordCec.piece.ChangeSprite("Default");
                     }
                     break;
             }
         }
+        else if (this.tag == "Cec" && !SharedData.duendeTrained)    
+        {
+            spriteRenderer.sprite = sprites[(int)SpriteNames.DEFAULT];
+        }
+        
     }
 }
