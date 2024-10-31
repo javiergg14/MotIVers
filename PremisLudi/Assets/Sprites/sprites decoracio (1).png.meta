@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 646b6bb63fa4563418a1f3bf6a09541c
+guid: 56063b9338dff2749b74e1acc0b56e19
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5186101292857765983
-    second: granota_0
+      213: 3518288204725928466
+    second: sprites decoracio (1)_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -84,19 +84,6 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
     buildTarget: Standalone
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -139,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: granota_0
+      name: sprites decoracio (1)_0
       rect:
         serializedVersion: 2
-        x: 436
-        y: 28
-        width: 1018
-        height: 1125
+        x: 282
+        y: 328
+        width: 1434
+        height: 1578
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -153,8 +140,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1afc40ee9544708b0800000000000000
-      internalID: -5186101292857765983
+      spriteID: 212c2244b7873d030800000000000000
+      internalID: 3518288204725928466
       vertices: []
       indices: 
       edges: []
@@ -170,7 +157,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      granota_0: -5186101292857765983
+      sprites decoracio (1)_0: 3518288204725928466
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

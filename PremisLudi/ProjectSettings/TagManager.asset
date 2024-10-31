@@ -13,6 +13,7 @@ TagManager:
   - Gos
   - Trained
   - Big
+  - Tree
   layers:
   - Default
   - TransparentFX

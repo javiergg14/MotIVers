@@ -21,6 +21,9 @@ public class PieceController : MonoBehaviour
     private GameObject entradaDuende;
 
     [SerializeField]
+    private GameObject PassTutorial;    
+
+    [SerializeField]
     private OvejaTransform sheep;
 
     [SerializeField]
@@ -90,6 +93,10 @@ public class PieceController : MonoBehaviour
                     if (this.tag == "Duende")
                     {
                         playerTransforms.Transform(1);
+                    }
+                    if (this.tag == "Tree")
+                    {
+                        PassTutorial.GetComponent<Collider2D>().enabled = false;
                     }
                     break;
 
