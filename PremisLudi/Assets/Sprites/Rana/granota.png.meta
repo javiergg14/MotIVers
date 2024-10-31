@@ -169,7 +169,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      granota_0: -5186101292857765983
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

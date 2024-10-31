@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 7ed4374365d15414196fcb59d42472cc
+guid: 0e87e92f58573c243834ab3b1e113b75
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3515041702397440441
-    second: duende_0
+      213: 8942691392792166254
+    second: Mesa de trabajo 1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -84,19 +84,6 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
     buildTarget: Standalone
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -139,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: duende_0
+      name: Mesa de trabajo 1_0
       rect:
         serializedVersion: 2
-        x: 27
-        y: 7
-        width: 202
-        height: 242
+        x: 0
+        y: 0
+        width: 2480
+        height: 3507
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -153,8 +140,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 74e8ae5f130183fc0800000000000000
-      internalID: -3515041702397440441
+      spriteID: e6ff15bf072da1c70800000000000000
+      internalID: 8942691392792166254
       vertices: []
       indices: 
       edges: []
@@ -170,7 +157,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      duende_0: -3515041702397440441
+      Mesa de trabajo 1_0: 8942691392792166254
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
