@@ -3915,6 +3915,7 @@ MonoBehaviour:
   playerTransforms: {fileID: 61444041}
   lvl: {fileID: 0}
   entradaDuende: {fileID: 0}
+  PassTutorial: {fileID: 0}
   sheep: {fileID: 0}
   exchangeWordCec: {fileID: 1468651861}
   word: {fileID: 1482555831}
@@ -12336,6 +12337,7 @@ MonoBehaviour:
   playerTransforms: {fileID: 0}
   lvl: {fileID: 0}
   entradaDuende: {fileID: 2054297043}
+  PassTutorial: {fileID: 0}
   sheep: {fileID: 1507028582}
   exchangeWordCec: {fileID: 0}
   word: {fileID: 1293767499}
@@ -12750,7 +12752,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -5
   m_Sprite: {fileID: -6365629800890043370, guid: 23d2b25c3be8bdd409cf0eb23336872d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -12948,6 +12950,7 @@ MonoBehaviour:
   playerTransforms: {fileID: 0}
   lvl: {fileID: 0}
   entradaDuende: {fileID: 0}
+  PassTutorial: {fileID: 0}
   sheep: {fileID: 0}
   exchangeWordCec: {fileID: 0}
   word: {fileID: 129164137}
@@ -14296,6 +14299,7 @@ MonoBehaviour:
   playerTransforms: {fileID: 0}
   lvl: {fileID: 341911946}
   entradaDuende: {fileID: 0}
+  PassTutorial: {fileID: 0}
   sheep: {fileID: 0}
   exchangeWordCec: {fileID: 1468651861}
   word: {fileID: 0}
