@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 649a01cbb880bf142bff34796c9ce420
+guid: 23d2b25c3be8bdd409cf0eb23336872d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1412945729244362386
-    second: mapa_0
+      213: -6365629800890043370
+    second: pont_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -139,13 +139,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: mapa_0
+      name: pont_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 3840
-        height: 2160
+        width: 488
+        height: 276
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -153,8 +153,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e690c796855346ce0800000000000000
-      internalID: -1412945729244362386
+      spriteID: 614fe423c6db8a7a0800000000000000
+      internalID: -6365629800890043370
       vertices: []
       indices: 
       edges: []
@@ -169,8 +169,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      mapa_0: -1412945729244362386
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

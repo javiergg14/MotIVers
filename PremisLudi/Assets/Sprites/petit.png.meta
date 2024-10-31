@@ -1,10 +1,25 @@
 fileFormatVersion: 2
-guid: 646b6bb63fa4563418a1f3bf6a09541c
+guid: 61e5cad7e1fb75b42b4560d7eed811e7
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5186101292857765983
-    second: granota_0
+      213: 3257347509805793665
+    second: petit_0
+  - first:
+      213: -6872159439683125088
+    second: petit_1
+  - first:
+      213: 8602695613975544210
+    second: petit_2
+  - first:
+      213: 8643477456038889663
+    second: petit_3
+  - first:
+      213: 419212002922672293
+    second: petit_4
+  - first:
+      213: -5142626570751354266
+    second: petit_5
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +61,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -139,13 +154,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: granota_0
+      name: petit_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 106
-        height: 117
+        width: 27
+        height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -153,8 +168,113 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1afc40ee9544708b0800000000000000
-      internalID: -5186101292857765983
+      spriteID: 1814aff4d4c643d20800000000000000
+      internalID: 3257347509805793665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: petit_1
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 10
+        width: 21
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a007dd566f21a0a0800000000000000
+      internalID: -6872159439683125088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: petit_2
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 40
+        width: 11
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 291c2d5f41ae26770800000000000000
+      internalID: 8602695613975544210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: petit_3
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 10
+        width: 20
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb88b4f73fcc3f770800000000000000
+      internalID: 8643477456038889663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: petit_4
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 11
+        width: 27
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a039c7781751d500800000000000000
+      internalID: 419212002922672293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: petit_5
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 11
+        width: 10
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66a51e57168b1a8b0800000000000000
+      internalID: -5142626570751354266
       vertices: []
       indices: 
       edges: []
@@ -162,14 +282,20 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      petit_0: 3257347509805793665
+      petit_1: -6872159439683125088
+      petit_2: 8602695613975544210
+      petit_3: 8643477456038889663
+      petit_4: 419212002922672293
+      petit_5: -5142626570751354266
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
