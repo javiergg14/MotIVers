@@ -157,8 +157,8 @@ public class PieceController : MonoBehaviour
 
                     if (this.tag == "Cec" && lvl != null && lvl.GetComponent<Collider2D>() != null)
                     {
-                        Debug.Log("Superhero");
                         lvl.GetComponent<Collider2D>().enabled = false;
+                        lvl.GetComponent<SpriteRenderer>().enabled = false;
                     }
                     break;
 
