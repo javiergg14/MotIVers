@@ -169,7 +169,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      tanca_0: 2564029107639732409
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
